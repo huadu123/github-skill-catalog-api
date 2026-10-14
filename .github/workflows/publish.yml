@@ -34,8 +34,9 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
           python collect_daily.py --output-dir work/daily
-          mkdir -p site
+          mkdir -p site/skills
           cp work/daily/skill-repos-*.json site/latest.json
+          cp work/daily/skill-repos-*.json site/skills/latest.json
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
